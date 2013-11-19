@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  address: MyString
+  price: 9.99
+  number_of_roomates: 1
+  notes: MyText
+
+two:
+  address: MyString
+  price: 9.99
+  number_of_roomates: 1
+  notes: MyText
