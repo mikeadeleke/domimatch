@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price range:</strong>
+  <%= @request.price_range %>
+</p>
+
+<p>
+  <strong>Type of house:</strong>
+  <%= @request.type_of_house %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @request.term %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
