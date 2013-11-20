@@ -13,7 +13,11 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
+<<<<<<< HEAD
         <td><%= image.image %></td>
+=======
+        <td><%= @image.image_url %></td>
+>>>>>>> 95c325823f36b95e1a8dd4fe24e72afcd5e42224
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>

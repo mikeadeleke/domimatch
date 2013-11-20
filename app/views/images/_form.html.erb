@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for(@image) do |f| %>
+=======
+<%= form_for @image, html: { multipart: true } do |f| %>
+>>>>>>> 95c325823f36b95e1a8dd4fe24e72afcd5e42224
   <% if @image.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
@@ -13,7 +17,11 @@
 
   <div class="field">
     <%= f.label :image %><br>
+<<<<<<< HEAD
     <%= f.text_field :image %>
+=======
+    <%= f.file_field :image %>
+>>>>>>> 95c325823f36b95e1a8dd4fe24e72afcd5e42224
   </div>
   <div class="actions">
     <%= f.submit %>
