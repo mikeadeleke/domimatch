@@ -1,33 +1,16 @@
-<h1>Listing listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Price</th>
-      <th>Number of roomates</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <br><h1>Listings</h1>
     <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.address %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.number_of_roomates %></td>
-        <td><%= listing.notes %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        Address: <%= listing.address %><br>
+        Price: <%= listing.price %><br>
+        Number of roommates: <%= listing.number_of_roomates %><br>
+        Explain yourself: <%= listing.notes %><br>
+        <%= link_to 'Show', listing %>
+        <%= link_to 'Edit', edit_listing_path(listing) %>
+        <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
+<% end %>
 <br>
 
 <%= link_to 'New Listing', new_listing_path %>
+
+</div>
