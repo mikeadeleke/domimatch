@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Requests</h1>
+    <% @requests.each do |request| %>
+        Price Range: <%= request.price_range %></br>
+        Type of place: <%= request.type_of_house %></br>
+        Which term? <%= request.term %></br>
+        <%= link_to 'Show', request %>
+        <%= link_to 'Edit', edit_request_path(request) %>
+        <%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
+<% end %>
+<br>
+
+<%= link_to 'New Request', new_request_path %>
+
+</div>

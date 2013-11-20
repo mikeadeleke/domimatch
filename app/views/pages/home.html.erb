@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+	<div class="row-fluid">
+	  <div class="span6">
+	  	<%= render "listings/listing" %>
+	  </div>
+	  <div class="span6">
+	  	<%= render "requests/request" %>
+	  </div>
+	</div>
+<% else %>
+<h1>Welcome to Domi!</h1>
+<h2>College Housing Made Easy</h2>
+<% end %>
