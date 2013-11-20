@@ -1,4 +1,6 @@
 Domimatch::Application.routes.draw do
+  resources :images
+
   resources :requests
 
   get "pages/home"
