@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_request, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /requests
   # GET /requests.json
@@ -10,25 +11,29 @@ class RequestsController < ApplicationController
   # GET /requests/1
   # GET /requests/1.json
   def show
+    @request = Request.find(params[:id])
   end
 
   # GET /requests/new
   def new
-    @request = Request.new
+    @request = current_user.requests.new
   end
 
   # GET /requests/1/edit
   def edit
+    if !@request
+      redirect_to requests_url
+    end
   end
 
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(request_params)
+    @request = current_user.requests.new(request_params)
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to @request, notice: 'request was successfully created.' }
         format.json { render action: 'show', status: :created, location: @request }
       else
         format.html { render action: 'new' }
@@ -42,7 +47,7 @@ class RequestsController < ApplicationController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+        format.html { redirect_to @request, notice: 'request was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,17 +59,21 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
-    @request.destroy
-    respond_to do |format|
-      format.html { redirect_to requests_url }
-      format.json { head :no_content }
+    if @request
+      @request.destroy
+      respond_to do |format|
+        format.html { redirect_to requests_url }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to requests_url
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
-      @request = Request.find(params[:id])
+      @request = current_user.requests.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -72,3 +81,4 @@ class RequestsController < ApplicationController
       params.require(:request).permit(:price_range, :type_of_house, :term)
     end
 end
+
