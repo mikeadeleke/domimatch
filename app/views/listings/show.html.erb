@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<br><br><p id="notice"><%= notice %></p>
 
 <p>
   <strong>Address:</strong>
@@ -18,6 +18,10 @@
 <p>
   <strong>Notes:</strong>
   <%= @listing.notes %>
+</p>
+
+<p>
+	<%= @listing.images %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |

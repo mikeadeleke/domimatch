@@ -11,6 +11,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'devise'
 gem 'paperclip', '~> 3.0'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
