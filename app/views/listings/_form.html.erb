@@ -1,4 +1,4 @@
-<%= form_for(@listing) do |f| %>
+<%= form_for @listing, html: {multipart: true} do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -28,8 +28,10 @@
     <%= f.text_area :notes %>
   </div>
   <div class="actions">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <%= f.fields_for :images do |image| %>
+      <%= image.label :image %><br />
+      <%= image.file_field :image %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

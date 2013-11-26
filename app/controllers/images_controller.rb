@@ -24,10 +24,11 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
+    @listing.image = params[:image]
     @image = Image.new(image_params)
 
     respond_to do |format|
-      if @image.save
+      if @image.image_url.save
         format.html { redirect_to @image, notice: 'Image was successfully created.' }
         format.json { render action: 'show', status: :created, location: @image }
       else

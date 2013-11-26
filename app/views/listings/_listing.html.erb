@@ -8,7 +8,7 @@
         <%= link_to 'Show', listing %>
         <%= link_to 'Edit', edit_listing_path(listing) %>
         <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
-        <% listing.images.each do |image| %>
+        <%= listing.images.each do |image| %>
 			<img src="<%=image.image.url %>" />
 		<% end %>
 <% end %>
