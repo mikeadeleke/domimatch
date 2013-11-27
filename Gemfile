@@ -12,6 +12,9 @@ gem 'devise'
 gem 'paperclip', '~> 3.0'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem "mini_magick"
+
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
