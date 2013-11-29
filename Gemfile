@@ -13,7 +13,7 @@ gem 'paperclip', '~> 3.0'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem "mini_magick"
-
+gem "rmagick"
 
 
 group :development, :test do

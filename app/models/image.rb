@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
 	# this is the load:
 	require 'base64'
 
-	File.open('ruby.png', 'r') do|image_file|
-	  puts Base64.encode64(image_file.read)
-	end
+	# File.open('domiapp.png', 'r') do|image_file|
+	#   puts Base64.encode64(image_file.read)
+	# end
 end
