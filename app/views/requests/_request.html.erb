@@ -1,4 +1,4 @@
-<br><h1>Requests</h1>
+<br><h1><%= link_to "Requests", requests_path %></h1>
 <br><br><%= link_to 'New Request', new_request_path %><br><br>
     <% @requests.each do |request| %>
         Price Range: <%= request.price_range %></br>

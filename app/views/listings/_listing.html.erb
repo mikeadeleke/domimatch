@@ -1,4 +1,4 @@
-<br><h1>Listings</h1>
+<br><h1><%= link_to "Listings", listings_path %></h1>
 <br><br><%= link_to 'New Listing', new_listing_path %><br><br>
     <% @listings.each do |listing| %>
         Address: <%= listing.address %><br>
