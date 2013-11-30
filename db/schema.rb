@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131121014605) do
 
   create_table "listings", force: true do |t|
     t.string   "address"
-    t.decimal  "price"
+    t.decimal  "price",              precision: 10, scale: 0
     t.integer  "number_of_roomates"
     t.text     "notes"
     t.datetime "created_at"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20131121014605) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
