@@ -14,7 +14,8 @@ gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem "mini_magick"
 gem "rmagick"
-gem 'flatui-rails'
+gem 'bootswatch-rails'
+
 
 
 group :development, :test do
