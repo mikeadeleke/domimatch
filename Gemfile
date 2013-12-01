@@ -17,7 +17,7 @@ gem "rmagick"
 gem 'bootswatch-rails'
 gem 'execjs'
 gem 'therubyracer'
-gem 'sqlite3'
+gem 'mysql2'
 
 gem 'rspec-rails', '2.13.1'
 # The following optional lines are part of the advanced setup.
